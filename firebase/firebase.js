@@ -5,6 +5,10 @@ import {
     GoogleAuthProvider
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
+import {
+    getFirestore
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyAJuRnHkvTY9TDDYZlMgJ3ZyatOS5wyvyQ",
     authDomain: "ai-titans-social.firebaseapp.com",
@@ -17,11 +21,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-// Google Provider
 const provider = new GoogleAuthProvider();
 
 export {
     auth,
+    db,
     provider
 };
