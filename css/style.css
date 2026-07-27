@@ -1,0 +1,1532 @@
+/* ==========================================
+   AI TITANS SOCIAL - PART 1
+   Reset + Body + Navbar + Hero
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0F172A;
+    color:#fff;
+    overflow-x:hidden;
+
+    background-image:
+    radial-gradient(circle at top,
+    rgba(59,130,246,.18),
+    transparent 40%);
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(15,23,42,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:999;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#3B82F6;
+
+    letter-spacing:1px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    color:#3B82F6;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.login-btn{
+
+    padding:12px 24px;
+
+    background:transparent;
+
+    color:white;
+
+    border:2px solid #3B82F6;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#3B82F6;
+
+}
+
+.start-btn{
+
+    padding:12px 24px;
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.start-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:140px 8% 80px;
+
+}
+
+.hero-left{
+
+    flex:1;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:#1E3A8A;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.hero h1{
+
+    color:#3B82F6;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+.hero h2{
+
+    font-size:65px;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+    color:white;
+
+}
+
+.hero p{
+
+    color:#94A3B8;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:620px;
+
+    margin-bottom:15px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:40px;
+
+}
+
+.primary-btn{
+
+    padding:15px 35px;
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.45);
+
+}
+
+.secondary-btn{
+
+    padding:15px 35px;
+
+    background:transparent;
+
+    border:2px solid #3B82F6;
+
+    color:white;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.secondary-btn:hover{
+
+    background:#3B82F6;
+
+}
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.dashboard-preview{
+
+    width:100%;
+
+    max-width:520px;
+
+    background:#1E293B;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+.dashboard-preview i{
+
+    font-size:80px;
+
+    color:#3B82F6;
+
+    margin-bottom:20px;
+
+}
+
+.dashboard-preview h3{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.dashboard-preview p{
+
+    color:#94A3B8;
+
+    margin:10px 0;
+
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+
+/* ==========================================
+   AI TITANS SOCIAL - PART 2
+   Trusted + Features
+========================================== */
+
+/* ===========================
+   TRUSTED
+=========================== */
+
+.trusted{
+
+    padding:80px 8%;
+    text-align:center;
+
+}
+
+.trusted h2{
+
+    font-size:38px;
+    margin-bottom:45px;
+    color:#fff;
+
+}
+
+.logos{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:35px;
+
+}
+
+.logos span{
+
+    padding:16px 30px;
+
+    background:#1E293B;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    color:#94A3B8;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.logos span:hover{
+
+    color:#fff;
+
+    transform:translateY(-8px);
+
+    background:#2563EB;
+
+    box-shadow:0 12px 30px rgba(37,99,235,.35);
+
+}
+
+/* ===========================
+   FEATURES
+=========================== */
+
+.features{
+
+    padding:100px 8%;
+
+}
+
+.features h2{
+
+    text-align:center;
+
+    font-size:45px;
+
+    margin-bottom:60px;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:#1E293B;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.45s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Top Glow */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:4px;
+
+background:#3B82F6;
+
+transition:.45s;
+
+}
+
+.card:hover::before{
+
+left:0;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:
+
+0 20px 45px rgba(37,99,235,.25);
+
+border-color:#3B82F6;
+
+}
+
+/* ICON */
+
+.card i{
+
+font-size:55px;
+
+color:#3B82F6;
+
+margin-bottom:22px;
+
+transition:.35s;
+
+}
+
+.card:hover i{
+
+transform:scale(1.15) rotate(5deg);
+
+}
+
+/* TITLE */
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+color:white;
+
+}
+
+/* TEXT */
+
+.card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#94A3B8;
+
+}
+
+/* Multi Platform */
+
+.card p:not(:first-of-type){
+
+margin-top:6px;
+
+}
+
+/* Small Blue Line */
+
+.card hr{
+
+border:none;
+
+height:2px;
+
+background:#2563EB;
+
+margin:18px auto;
+
+width:60px;
+
+}
+
+/* ===========================
+   FEATURE GLOW
+=========================== */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+background:rgba(59,130,246,.08);
+
+border-radius:50%;
+
+top:-110px;
+
+right:-110px;
+
+transition:.45s;
+
+}
+
+.card:hover::after{
+
+transform:scale(1.2);
+
+}
+
+/* ===========================
+   FEATURE ANIMATION
+=========================== */
+
+.card{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
+
+.features{
+
+padding:80px 6%;
+
+}
+
+.trusted{
+
+padding:70px 6%;
+
+}
+
+.feature-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.features h2{
+
+font-size:34px;
+
+}
+
+.trusted h2{
+
+font-size:34px;
+
+}
+
+.logos{
+
+gap:18px;
+
+}
+
+.logos span{
+
+width:100%;
+
+}
+
+}
+
+
+/* ==========================================
+   AI TITANS SOCIAL - PART 3
+   Pricing + CTA + Footer
+========================================== */
+
+/* ===========================
+   PRICING
+=========================== */
+
+/* ===========================
+   PRICING
+=========================== */
+
+.pricing{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.pricing h2{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.pricing-subtitle{
+    color:#94A3B8;
+    margin-bottom:60px;
+    font-size:18px;
+}
+
+/* 3 Cards */
+
+.pricing-grid{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:80px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+/* Card */
+
+.price-card{
+
+    width:340px;
+
+    min-height:600px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#1E293B;
+
+    border-radius:25px;
+
+    padding:45px 30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.price-card button{
+
+    margin-top:auto;
+
+}
+/* Hover */
+
+.price-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 60px rgba(37,99,235,.35);
+
+    border-color:#3B82F6;
+}
+
+/* Popular Card */
+
+.popular{
+
+    border:2px solid #2563EB;
+
+    transform:scale(1.05);
+}
+
+.popular:hover{
+
+    transform:scale(1.08);
+}
+
+/* Badge */
+
+.popular-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    right:-45px;
+
+    background:#2563EB;
+
+    color:#fff;
+
+    padding:8px 50px;
+
+    transform:rotate(45deg);
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+/* Text */
+
+.price-card h3{
+
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+.price-card h1{
+
+    font-size:55px;
+
+    color:#3B82F6;
+
+    margin-bottom:25px;
+}
+
+.price-card h1 span{
+
+    font-size:18px;
+
+    color:#94A3B8;
+}
+
+.price-card p{
+
+    color:#CBD5E1;
+
+    font-size:17px;
+
+    margin:16px 0;
+}
+
+.price-card button{
+
+    margin-top:25px;
+
+    width:100%;
+}
+
+/* Mobile */
+
+@media(max-width:1100px){
+
+    .pricing-grid{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .popular{
+
+        transform:none;
+    }
+
+    .popular:hover{
+
+        transform:translateY(-10px);
+    }
+
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.cta{
+
+padding:100px 8%;
+
+text-align:center;
+
+background:linear-gradient(135deg,#1E3A8A,#2563EB);
+
+border-radius:30px;
+
+margin:80px 8%;
+
+box-shadow:0 20px 60px rgba(37,99,235,.35);
+
+}
+
+.cta h2{
+
+font-size:48px;
+
+margin-bottom:20px;
+
+}
+
+.cta p{
+
+font-size:18px;
+
+color:#E2E8F0;
+
+margin-bottom:35px;
+
+}
+
+.cta button{
+
+padding:16px 40px;
+
+background:white;
+
+color:#2563EB;
+
+font-size:18px;
+
+font-weight:700;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.cta button:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 35px rgba(255,255,255,.35);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+margin-top:100px;
+
+padding:60px 8%;
+
+background:#111827;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+}
+
+footer h2{
+
+font-size:32px;
+
+color:#3B82F6;
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+font-size:16px;
+
+color:#94A3B8;
+
+margin-top:10px;
+
+}
+
+footer .social{
+
+margin-top:30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+footer .social a{
+
+width:48px;
+height:48px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#1E293B;
+
+color:white;
+
+border-radius:50%;
+
+font-size:20px;
+
+transition:.35s;
+
+text-decoration:none;
+
+}
+
+footer .social a:hover{
+
+background:#2563EB;
+
+transform:translateY(-6px);
+
+box-shadow:0 12px 30px rgba(37,99,235,.35);
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.price-card{
+
+max-width:100%;
+
+}
+
+.cta{
+
+margin:60px 6%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.pricing h2{
+
+font-size:36px;
+
+}
+
+.price-card{
+
+padding:35px 25px;
+
+}
+
+.price-card h1{
+
+font-size:42px;
+
+}
+
+.cta{
+
+padding:70px 25px;
+
+}
+
+.cta h2{
+
+font-size:34px;
+
+}
+
+.cta p{
+
+font-size:16px;
+
+}
+
+}
+
+
+/* ==========================================
+   AI TITANS SOCIAL - PART 4
+   Animations + Responsive + Final Polish
+========================================== */
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0F172A;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563EB;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#3B82F6;
+}
+
+/* ===========================
+   TEXT SELECTION
+=========================== */
+
+::selection{
+    background:#2563EB;
+    color:white;
+}
+
+/* ===========================
+   SECTION SPACING
+=========================== */
+
+section{
+    scroll-margin-top:100px;
+}
+
+/* ===========================
+   BUTTON EFFECT
+=========================== */
+
+button{
+    transition:.35s;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+/* ===========================
+   LINK EFFECT
+=========================== */
+
+a{
+    transition:.3s;
+}
+
+/* ===========================
+   GLOW BACKGROUND
+=========================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+left:-200px;
+top:-200px;
+
+background:#2563EB;
+
+filter:blur(180px);
+
+opacity:.18;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+right:-180px;
+bottom:-180px;
+
+background:#7C3AED;
+
+filter:blur(180px);
+
+opacity:.18;
+
+z-index:-1;
+
+}
+
+/* ===========================
+   HERO FLOAT
+=========================== */
+
+.hero-right{
+
+animation:floatHero 6s ease-in-out infinite;
+
+}
+
+@keyframes floatHero{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ===========================
+   IMAGE EFFECT
+=========================== */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ===========================
+   FADE ANIMATION
+=========================== */
+
+.fade{
+
+animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   CARD ANIMATION
+=========================== */
+
+.card{
+
+animation:cardAnimation .8s ease;
+
+}
+
+@keyframes cardAnimation{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   NAVBAR SHADOW
+=========================== */
+
+.navbar{
+
+transition:.35s;
+
+}
+
+/* ===========================
+   LOGO EFFECT
+=========================== */
+
+.logo{
+
+transition:.3s;
+
+}
+
+.logo:hover{
+
+transform:scale(1.05);
+
+color:#60A5FA;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:992px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:150px;
+
+}
+
+.hero-left{
+
+order:2;
+
+}
+
+.hero-right{
+
+order:1;
+
+margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.navbar{
+
+padding:18px 5%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:18px;
+
+}
+
+.buttons{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.hero h2{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h2{
+
+font-size:32px;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+.features h2,
+.trusted h2,
+.pricing h2{
+
+font-size:30px;
+
+}
+
+.cta h2{
+
+font-size:28px;
+
+}
+
+footer h2{
+
+font-size:24px;
+
+}
+
+}
+
+/* ===========================
+   SMOOTH TRANSITIONS
+=========================== */
+
+.card,
+.price-card,
+.primary-btn,
+.secondary-btn,
+.logos span{
+
+transition:all .35s ease;
+
+}
+
+/* ===========================
+   END
+=========================== */
