@@ -2,6 +2,12 @@
 // AI TITANS SOCIAL
 // Dashboard JS
 // ==========================================
+import { auth } from "../firebase/firebase.js";
+
+import {
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 // -------------------------------
 // Active Sidebar Menu
@@ -243,38 +249,46 @@ console.log("AI TITANS SOCIAL Dashboard Loaded 🚀");
 
 
 // ===============================
-// USER WELCOME
+// Firebase User
 // ===============================
 
-// LocalStorage se email uthao
-const userEmail = localStorage.getItem("userEmail");
+onAuthStateChanged(auth, (user) => {
 
-// Welcome text wala element
-const welcomeText = document.querySelector(".welcome-text");
+    if (!user) {
 
-// Agar email mila
-if (userEmail && welcomeText) {
+        window.location.href = "login.html";
+        return;
 
-    // Email ka username nikalo
-    const userName = userEmail.split("@")[0];
+    }
 
-    // First letter Capital
-    const finalName =
-        userName.charAt(0).toUpperCase() +
-        userName.slice(1);
+    const welcomeText = document.querySelector(".welcome-text");
 
-    welcomeText.innerHTML = `
-        Welcome back, ${finalName} 👋
-    `;
+    if (welcomeText) {
 
-}    
+        welcomeText.innerHTML =
+        `Welcome back, ${user.displayName || user.email} 👋`;
 
+    }
+
+});
 
 // ===============================
 // Logout
 // ===============================
 
 const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", async () => {
+
+    const confirmLogout = confirm("Logout?");
+
+    if (!confirmLogout) return;
+
+    await signOut(auth);
+
+    window.location.href = "login.html";
+
+});
 
 if (logoutBtn) {
 
@@ -284,12 +298,140 @@ if (logoutBtn) {
 
         if (confirmLogout) {
 
-            localStorage.removeItem("userEmail");
 
             window.location.href = "login.html";
 
         }
 
     });
+
+}
+
+// ==========================================
+// FIREBASE AUTH
+// ==========================================
+
+onAuthStateChanged(auth, (user) => {
+
+    if (!user) {
+
+        window.location.href = "login.html";
+        return;
+
+    }
+
+    // Welcome Text
+    const welcomeText = document.querySelector(".welcome-text");
+
+    if (welcomeText) {
+
+        welcomeText.innerHTML =
+        `Welcome back, ${user.displayName || "User"} 👋`;
+
+    }
+
+    // Profile Name
+    const profileName = document.querySelector(".profile span");
+
+    if (profileName) {
+
+        profileName.textContent =
+        user.displayName || "User";
+
+    }
+
+    // Profile Image
+    const profileImage =
+    document.querySelector(".profile img");
+
+    if (profileImage && user.photoURL) {
+
+        profileImage.src = user.photoURL;
+
+    }
+
+});
+
+const hour = new Date().getHours();
+
+let greet = "Good Evening";
+
+if (hour < 12) {
+
+    greet = "Good Morning";
+
+} else if (hour < 18) {
+
+    greet = "Good Afternoon";
+
+}
+
+const heading = document.querySelector(".topbar h1");
+
+if (heading) {
+
+    heading.innerHTML = `${greet} ☀️`;
+
+}
+
+const email = document.querySelector(".user-email");
+
+if (email) {
+
+    email.innerHTML = `📧 ${user.email}`;
+
+}
+
+const loginTime = document.querySelector(".login-time");
+
+if (loginTime) {
+
+    loginTime.innerHTML = `🕒 ${new Date().toLocaleString()}`;
+
+}
+
+const heroTitle = document.querySelector(".hero-title");
+
+if (heroTitle) {
+
+    heroTitle.innerHTML = `Welcome ${user.displayName || "User"} 🚀`;
+
+}
+
+
+// ==========================================
+// FIREBASE LOGOUT
+// ==========================================
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+logoutBtn.addEventListener("click", async ()=>{
+
+    const ok =
+    confirm("Are you sure you want to logout?");
+
+    if(!ok) return;
+
+    try{
+
+        await signOut(auth);
+
+        window.location.href =
+        "login.html";
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+        alert("Logout Failed");
+
+    }
+
+});
 
 }

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Content | AI TITANS SOCIAL</title>
+
+<link rel="stylesheet" href="css/ai-content.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>🚀 AI TITANS</h2>
+
+</div>
+
+<ul class="menu">
+
+<li onclick="location.href='dashboard.html'">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</li>
+
+<li class="active">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+<span>AI Content</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<span>Scheduler</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Analytics</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Inbox</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</li>
+
+<li id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<main class="main">
+
+<header>
+
+<h1>✨ AI Content Generator</h1>
+
+<p>Create amazing posts using AI</p>
+
+</header>
+
+<section class="generator">
+
+<div class="left">
+
+<label>Platform</label>
+
+<select id="platform">
+
+<option>LinkedIn</option>
+
+<option>Instagram</option>
+
+<option>Facebook</option>
+
+<option>X</option>
+
+<option>Threads</option>
+
+</select>
+
+<label>Topic</label>
+
+<input
+type="text"
+id="topic"
+placeholder="Enter Topic">
+
+<label>Tone</label>
+
+<select id="tone">
+
+<option>Professional</option>
+
+<option>Friendly</option>
+
+<option>Motivational</option>
+
+<option>Funny</option>
+
+<option>Educational</option>
+
+</select>
+
+<label>Length</label>
+
+<select id="length">
+
+<option>Short</option>
+
+<option>Medium</option>
+
+<option>Long</option>
+
+</select>
+
+<label>
+
+<input
+type="checkbox"
+id="emoji"
+checked>
+
+Add Emoji
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="hashtags"
+checked>
+
+Add Hashtags
+
+</label>
+
+<button id="generateBtn">
+
+Generate Content
+
+</button>
+
+</div>
+
+<div class="right">
+
+<h2>Generated Content</h2>
+
+<textarea
+id="output"
+placeholder="Your AI generated post will appear here..."
+></textarea>
+
+<div class="buttons">
+
+<button id="copyBtn">
+
+Copy
+
+</button>
+
+<button id="downloadBtn">
+
+Download
+
+</button>
+
+<button id="saveBtn">
+
+Save Draft
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script type="module" src="js/ai-content.js"></script>
+
+</body>
+
+</html>

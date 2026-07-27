@@ -387,42 +387,65 @@ transform:translateY(0px);
    TRUSTED
 =========================== */
 
+/* ================= TRUSTED ================= */
+
 .trusted{
 
-    padding:80px 8%;
+    width:100%;
+
+    padding:90px 8%;
+
     text-align:center;
 
 }
 
 .trusted h2{
 
-    font-size:38px;
-    margin-bottom:45px;
+    font-size:42px;
+
     color:#fff;
+
+    margin-bottom:45px;
 
 }
 
 .logos{
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
+    gap:25px;
+
     flex-wrap:wrap;
-    gap:35px;
 
 }
 
-.logos span{
+.logos a{
 
-    padding:16px 30px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:170px;
+
+    height:65px;
+
+    text-decoration:none;
+
+    color:#94A3B8;
 
     background:#1E293B;
 
     border:1px solid rgba(255,255,255,.08);
 
-    border-radius:14px;
+    border-radius:15px;
 
-    color:#94A3B8;
+    font-size:18px;
 
     font-weight:600;
 
@@ -430,13 +453,13 @@ transform:translateY(0px);
 
 }
 
-.logos span:hover{
+.logos a:hover{
 
     color:#fff;
 
-    transform:translateY(-8px);
-
     background:#2563EB;
+
+    transform:translateY(-8px);
 
     box-shadow:0 12px 30px rgba(37,99,235,.35);
 
