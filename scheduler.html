@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduler | AI TITANS SOCIAL</title>
+    <link rel="stylesheet" href="css/scheduler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo"><h2>🚀 AI TITANS</h2></div>
+            <ul class="menu">
+                <li onclick="location.href='dashboard.html'"><i class="fa-solid fa-house"></i><span>Dashboard</span></li>
+                <li onclick="location.href='ai-content.html'"><i class="fa-solid fa-wand-magic-sparkles"></i><span>AI Content</span></li>
+                <li class="active"><i class="fa-solid fa-calendar-days"></i><span>Scheduler</span></li>
+                <li><i class="fa-solid fa-chart-line"></i><span>Analytics</span></li>
+                <li><i class="fa-solid fa-comments"></i><span>Inbox</span></li>
+                <li><i class="fa-solid fa-gear"></i><span>Settings</span></li>
+                <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></li>
+            </ul>
+        </aside>
+
+        <main class="main">
+            <header>
+                <p class="eyebrow">CONTENT PLANNER</p>
+                <h1>📅 Post Scheduler</h1>
+                <p>Plan your social media content in one place.</p>
+            </header>
+
+            <section class="scheduler-grid">
+                <form class="schedule-form" id="scheduleForm">
+                    <h2>Schedule a post</h2>
+
+                    <label for="schedulePlatform">Platform</label>
+                    <select id="schedulePlatform" required>
+                        <option>LinkedIn</option>
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>X</option>
+                        <option>Threads</option>
+                    </select>
+
+                    <label for="postContent">Post content</label>
+                    <textarea id="postContent" maxlength="3000" placeholder="Write or paste your social media post here..." required></textarea>
+
+                    <div class="date-time">
+                        <div>
+                            <label for="scheduleDate">Date</label>
+                            <input type="date" id="scheduleDate" required>
+                        </div>
+                        <div>
+                            <label for="scheduleTime">Time</label>
+                            <input type="time" id="scheduleTime" required>
+                        </div>
+                    </div>
+
+                    <button type="submit"><i class="fa-solid fa-calendar-plus"></i> Add to schedule</button>
+                </form>
+
+                <section class="scheduled-posts">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Upcoming posts</h2>
+                            <p id="postCount">0 posts scheduled</p>
+                        </div>
+                    </div>
+                    <div id="scheduledList" class="scheduled-list"></div>
+                    <div id="emptyState" class="empty-state">
+                        <i class="fa-regular fa-calendar"></i>
+                        <h3>No posts scheduled yet</h3>
+                        <p>Add your first post using the form.</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/scheduler.js"></script>
+</body>
+</html>
