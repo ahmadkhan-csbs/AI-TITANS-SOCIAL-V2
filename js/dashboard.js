@@ -5,21 +5,20 @@ import {
   signOut
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-// ================= Sidebar =================
+// ================= Sidebar Active =================
 
 const menuItems = document.querySelectorAll(".menu li");
 
 menuItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    menuItems.forEach((i) => i.classList.remove("active"));
-    item.classList.add("active");
 
-    const text = item.innerText.trim();
+    item.addEventListener("click", () => {
 
-    if (text === "AI Content") {
-      window.location.href = "ai-content.html";
-    }
-  });
+        menuItems.forEach(i => i.classList.remove("active"));
+
+        item.classList.add("active");
+
+    });
+
 });
 
 // ================= Hero Button =================

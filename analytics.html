@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | AI TITANS SOCIAL</title>
+    <link rel="stylesheet" href="css/analytics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="logo"><h2>🚀 AI TITANS</h2></div>
+            <ul class="menu">
+                <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+                <li><a href="ai-content.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>AI Content</span></a></li>
+                <li><a href="scheduler.html"><i class="fa-solid fa-calendar-days"></i><span>Scheduler</span></a></li>
+                <li class="active"><a href="analytics.html"><i class="fa-solid fa-chart-line"></i><span>Analytics</span></a></li>
+                <li class="unavailable" aria-disabled="true" title="Coming soon"><i class="fa-solid fa-comments"></i><span>Inbox (soon)</span></li>
+                <li class="unavailable" aria-disabled="true" title="Coming soon"><i class="fa-solid fa-gear"></i><span>Settings (soon)</span></li>
+                <li id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="topbar"><div><h1>Analytics Dashboard</h1><p class="welcome-text">Monitor your social media performance</p></div></header>
+            <section class="stats" aria-label="Performance overview">
+                <article class="card"><div><h3>Total Followers</h3><h2 id="followersCount">18.4K</h2><p>+12% this month</p></div><i class="fa-solid fa-users"></i></article>
+                <article class="card"><div><h3>Total Reach</h3><h2 id="reachCount">124K</h2><p>+18% this month</p></div><i class="fa-solid fa-eye"></i></article>
+                <article class="card"><div><h3>Engagement</h3><h2 id="engagementCount">92%</h2><p>Excellent</p></div><i class="fa-solid fa-heart"></i></article>
+                <article class="card"><div><h3>Total Posts</h3><h2 id="postCount">245</h2><p>Last 30 days</p></div><i class="fa-solid fa-file-lines"></i></article>
+            </section>
+            <section class="charts-grid">
+                <article class="panel large-panel"><div class="panel-header"><h3>Follower growth</h3><button class="refresh-btn" id="refreshAnalytics" type="button">Refresh</button></div><canvas id="growthChart" aria-label="Follower growth over the last 30 days"></canvas></article>
+                <article class="panel"><div class="panel-header"><h3>Account summary</h3></div><div class="summary-box"><div class="summary-card"><h2>245</h2><p>Total posts</p></div><div class="summary-card"><h2>18.4K</h2><p>Followers</p></div><div class="summary-card"><h2>92%</h2><p>Engagement</p></div><div class="summary-card"><h2>124K</h2><p>Reach</p></div></div></article>
+            </section>
+            <section class="charts-grid">
+                <article class="panel"><div class="panel-header"><h3>Recent activity</h3></div><div class="activity-list"><div class="activity-item"><i class="fa-brands fa-linkedin"></i><div><h4>LinkedIn post published</h4><p>2 minutes ago</p></div></div><div class="activity-item"><i class="fa-brands fa-instagram"></i><div><h4>Instagram reel scheduled</h4><p>18 minutes ago</p></div></div><div class="activity-item"><i class="fa-brands fa-facebook"></i><div><h4>Facebook campaign started</h4><p>1 hour ago</p></div></div></div></article>
+                <article class="panel"><div class="panel-header"><h3>Platform performance</h3></div><div class="platform-list"><div class="platform-card"><div><h4>LinkedIn</h4><p>58K reach</p></div><span>92% engagement</span></div><div class="platform-card"><div><h4>Instagram</h4><p>43K reach</p></div><span>88% engagement</span></div><div class="platform-card"><div><h4>Facebook</h4><p>21K reach</p></div><span>81% engagement</span></div></div></article>
+            </section>
+            <section class="export-section" aria-label="Export analytics"><button id="downloadCSV" type="button"><i class="fa-solid fa-file-csv"></i> Export CSV</button><button id="downloadPDF" type="button" title="PDF export is not available yet"><i class="fa-solid fa-file-pdf"></i> Export PDF (soon)</button></section>
+            <footer class="footer"><p>© 2026 AI TITANS SOCIAL | Analytics Dashboard</p></footer>
+        </main>
+    </div>
+    <script type="module" src="js/analytics.js"></script>
+</body>
+</html>

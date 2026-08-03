@@ -32,7 +32,9 @@ function formatDate(dateTime) {
 }
 
 function renderPosts() {
-    const posts = getPosts().sort((a, b) => new Date(a.scheduledAt) - new Date(b.scheduledAt));
+    const posts = getPosts()
+        .filter((post) => new Date(post.scheduledAt).getTime() > Date.now())
+        .sort((a, b) => new Date(a.scheduledAt) - new Date(b.scheduledAt));
     scheduledList.innerHTML = "";
     postCount.textContent = `${posts.length} post${posts.length === 1 ? "" : "s"} scheduled`;
     emptyState.classList.toggle("hidden", posts.length > 0);
@@ -72,8 +74,15 @@ function renderPosts() {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     const scheduledAt = new Date(`${dateInput.value}T${timeInput.value}`);
+    const postText = content.value.trim();
 
-    if (scheduledAt <= new Date()) {
+    if (!postText) {
+        alert("Please write post content before scheduling.");
+        content.focus();
+        return;
+    }
+
+    if (Number.isNaN(scheduledAt.getTime()) || scheduledAt <= new Date()) {
         alert("Please choose a future date and time.");
         return;
     }
@@ -82,7 +91,7 @@ form.addEventListener("submit", (event) => {
     posts.push({
         id: crypto.randomUUID(),
         platform: platform.value,
-        content: content.value.trim(),
+        content: postText,
         scheduledAt: scheduledAt.toISOString()
     });
 
@@ -95,8 +104,12 @@ form.addEventListener("submit", (event) => {
 function setDefaultDateTime() {
     const nextHour = new Date();
     nextHour.setHours(nextHour.getHours() + 1, 0, 0, 0);
-    dateInput.min = new Date().toISOString().split("T")[0];
-    dateInput.value = nextHour.toISOString().split("T")[0];
+    const toLocalDate = (date) => {
+        const offsetDate = new Date(date.getTime() - date.getTimezoneOffset() * 60_000);
+        return offsetDate.toISOString().split("T")[0];
+    };
+    dateInput.min = toLocalDate(new Date());
+    dateInput.value = toLocalDate(nextHour);
     timeInput.value = nextHour.toTimeString().slice(0, 5);
 }
 
