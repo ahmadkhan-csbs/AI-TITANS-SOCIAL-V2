@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | AI TITANS SOCIAL</title>
+    <link rel="stylesheet" href="css/settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="dashboard">
+    <aside class="sidebar" id="sidebar">
+        <div class="logo"><i class="fa-solid fa-rocket"></i><span>AI TITANS</span></div>
+        <nav>
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+            <a href="ai-content.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>AI Content</span></a>
+            <a href="scheduler.html"><i class="fa-solid fa-calendar-days"></i><span>Scheduler</span></a>
+            <a href="analytics.html"><i class="fa-solid fa-chart-line"></i><span>Analytics</span></a>
+            <a href="inbox.html"><i class="fa-solid fa-comments"></i><span>Inbox</span><span class="nav-badge">3</span></a>
+            <a href="settings.html" class="active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+        <button class="logout-btn" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
+    </aside>
+
+    <div class="mobile-header">
+        <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+        <div class="mobile-logo">🚀 AI TITANS</div>
+        <div class="mobile-profile"><img src="https://i.pravatar.cc/100?img=12" alt="Profile" id="mobileProfileImg"></div>
+    </div>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>⚙️ Settings</h1>
+                <p class="welcome-text">Manage your account and preferences</p>
+            </div>
+        </header>
+
+        <section class="settings-grid">
+            <div class="settings-nav">
+                <button class="set-tab active" data-tab="profile"><i class="fa-solid fa-user"></i> Profile</button>
+                <button class="set-tab" data-tab="accounts"><i class="fa-solid fa-plug"></i> Connected Accounts</button>
+                <button class="set-tab" data-tab="notifications"><i class="fa-solid fa-bell"></i> Notifications</button>
+                <button class="set-tab" data-tab="security"><i class="fa-solid fa-shield-halved"></i> Security</button>
+                <button class="set-tab" data-tab="billing"><i class="fa-solid fa-credit-card"></i> Billing</button>
+            </div>
+
+            <div class="settings-content">
+                <!-- Profile Tab -->
+                <div class="tab-panel active" id="tab-profile">
+                    <h2>Profile Settings</h2>
+                    <div class="profile-card">
+                        <div class="profile-avatar-section">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Profile" id="settingsAvatar">
+                            <button class="change-avatar"><i class="fa-solid fa-camera"></i> Change Photo</button>
+                        </div>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="setName" value="Ahmad Khan">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="setEmail" value="ahmad@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Bio</label>
+                            <textarea id="setBio" rows="3">AI enthusiast & Social Media Strategist</textarea>
+                        </div>
+                        <button class="save-btn" id="saveProfile"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                    </div>
+                </div>
+
+                <!-- Accounts Tab -->
+                <div class="tab-panel" id="tab-accounts">
+                    <h2>Connected Accounts</h2>
+                    <div class="account-list">
+                        <div class="account-item">
+                            <div class="acc-info"><i class="fa-brands fa-linkedin" style="color:#0A66C2"></i><div><h4>LinkedIn</h4><p>@ahmad-khan-cse</p></div></div>
+                            <button class="btn-disconnect">Disconnect</button>
+                        </div>
+                        <div class="account-item">
+                            <div class="acc-info"><i class="fa-brands fa-instagram" style="color:#E1306C"></i><div><h4>Instagram</h4><p>@aititanss</p></div></div>
+                            <button class="btn-disconnect">Disconnect</button>
+                        </div>
+                        <div class="account-item">
+                            <div class="acc-info"><i class="fa-brands fa-facebook" style="color:#1877F2"></i><div><h4>Facebook</h4><p>Not connected</p></div></div>
+                            <button class="btn-connect">Connect</button>
+                        </div>
+                        <div class="account-item">
+                            <div class="acc-info"><i class="fa-brands fa-x-twitter" style="color:#fff"></i><div><h4>X (Twitter)</h4><p>@ahmadkhan</p></div></div>
+                            <button class="btn-disconnect">Disconnect</button>
+                        </div>
+                        <div class="account-item">
+                            <div class="acc-info"><i class="fa-brands fa-threads" style="color:#fff"></i><div><h4>Threads</h4><p>Not connected</p></div></div>
+                            <button class="btn-connect">Connect</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Tab -->
+                <div class="tab-panel" id="tab-notifications">
+                    <h2>Notification Preferences</h2>
+                    <div class="toggle-list">
+                        <div class="toggle-item">
+                            <div><h4>Email Notifications</h4><p>Receive updates via email</p></div>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-item">
+                            <div><h4>Push Notifications</h4><p>Browser push notifications</p></div>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-item">
+                            <div><h4>Post Published Alerts</h4><p>When a scheduled post goes live</p></div>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-item">
+                            <div><h4>Weekly Reports</h4><p>Get weekly analytics summary</p></div>
+                            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-item">
+                            <div><h4>New Messages</h4><p>When you receive a new DM</p></div>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Tab -->
+                <div class="tab-panel" id="tab-security">
+                    <h2>Security Settings</h2>
+                    <div class="form-group"><label>Current Password</label><input type="password" placeholder="••••••••"></div>
+                    <div class="form-group"><label>New Password</label><input type="password" placeholder="Enter new password"></div>
+                    <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="Confirm new password"></div>
+                    <button class="save-btn"><i class="fa-solid fa-lock"></i> Update Password</button>
+                    <div class="security-info">
+                        <p><i class="fa-solid fa-shield-check"></i> Two-Factor Authentication: <strong>Enabled</strong></p>
+                        <p><i class="fa-solid fa-clock"></i> Last login: Today at 09:30 AM</p>
+                    </div>
+                </div>
+
+                <!-- Billing Tab -->
+                <div class="tab-panel" id="tab-billing">
+                    <h2>Billing & Plan</h2>
+                    <div class="plan-card">
+                        <div class="plan-header"><span class="plan-badge">Pro</span><h3>₹499/month</h3></div>
+                        <p>Your next billing date is <strong>September 15, 2026</strong></p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Unlimited AI Content</li>
+                            <li><i class="fa-solid fa-check"></i> Unlimited Scheduling</li>
+                            <li><i class="fa-solid fa-check"></i> 5 Social Accounts</li>
+                        </ul>
+                        <button class="save-btn">Upgrade Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div id="toastContainer"></div>
+<script type="module" src="js/settings.js"></script>
+</body>
+</html>

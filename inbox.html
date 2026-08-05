@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Inbox | AI TITANS SOCIAL</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/inbox.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- =========================
+            SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-rocket"></i>
+
+            <span>AI TITANS</span>
+
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="ai-content.html">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                AI Content
+
+            </a>
+
+            <a href="scheduler.html">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                Scheduler
+
+            </a>
+
+            <a href="analytics.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Analytics
+
+            </a>
+
+            <a href="inbox.html"
+               class="active">
+
+                <i class="fa-solid fa-comments"></i>
+
+                Inbox
+
+            </a>
+
+            <a href="settings.html">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </nav>
+
+        <button class="logout-btn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- =========================
+            MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- ===========================
+        HEADER
+=========================== -->
+
+<header class="top-header">
+
+    <div class="header-left">
+
+        <h1>
+
+            <i class="fa-solid fa-comments"></i>
+
+            Inbox
+
+        </h1>
+
+        <p>
+            Manage all your social conversations from one place.
+        </p>
+
+    </div>
+
+    <div class="header-right">
+
+        <button class="refresh-btn">
+
+            <i class="fa-solid fa-rotate-right"></i>
+
+            Refresh
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ===========================
+        SEARCH + FILTERS
+=========================== -->
+
+<section class="toolbar">
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search conversations...">
+
+    </div>
+
+    <div class="filter-tabs">
+
+        <button class="filter-btn active"
+                data-filter="all">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            All
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="unread">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Unread
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="linkedin">
+
+            <i class="fa-brands fa-linkedin"></i>
+
+            LinkedIn
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+            Instagram
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="facebook">
+
+            <i class="fa-brands fa-facebook"></i>
+
+            Facebook
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="twitter">
+
+            <i class="fa-brands fa-x-twitter"></i>
+
+            X
+
+        </button>
+
+        <button class="filter-btn"
+                data-filter="threads">
+
+            <i class="fa-brands fa-threads"></i>
+
+            Threads
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        INBOX LAYOUT
+=========================== -->
+
+<section class="inbox-wrapper">
+
+    <!-- =======================
+            CHAT LIST
+    ======================== -->
+
+    <aside class="chat-sidebar">
+
+        <div class="chat-sidebar-header">
+
+            <h2>
+
+                Conversations
+
+            </h2>
+
+            <span class="chat-count">
+
+                128
+
+            </span>
+
+        </div>
+
+        <div
+            class="conversation-list"
+            id="conversationList">
+
+            <!-- ===========================
+        CONVERSATION 01
+=========================== -->
+
+<div class="conversation active" data-platform="linkedin">
+
+    <div class="avatar online">
+        <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=0A66C2&color=fff" alt="Rahul">
+    </div>
+
+    <div class="conversation-info">
+
+        <div class="conversation-top">
+
+            <h4>Rahul Sharma</h4>
+
+            <span>10:32 AM</span>
+
+        </div>
+
+        <div class="conversation-bottom">
+
+            <p>Thanks for connecting. Let's collaborate!</p>
+
+            <span class="badge unread">2</span>
+
+        </div>
+
+    </div>
+
+    <i class="fa-brands fa-linkedin platform linkedin"></i>
+
+</div>
+
+<!-- ===========================
+        CONVERSATION 02
+=========================== -->
+
+<div class="conversation" data-platform="instagram">
+
+    <div class="avatar">
+        <img src="https://ui-avatars.com/api/?name=Sneha+Dhara&background=E1306C&color=fff" alt="Sneha">
+    </div>
+
+    <div class="conversation-info">
+
+        <div class="conversation-top">
+
+            <h4>Sneha Dhara</h4>
+
+            <span>09:14 AM</span>
+
+        </div>
+
+        <div class="conversation-bottom">
+
+            <p>Your latest reel looks amazing 🔥</p>
+
+        </div>
+
+    </div>
+
+    <i class="fa-brands fa-instagram platform instagram"></i>
+
+</div>
+
+<!-- ===========================
+        CONVERSATION 03
+=========================== -->
+
+<div class="conversation" data-platform="facebook">
+
+    <div class="avatar online">
+        <img src="https://ui-avatars.com/api/?name=Aman+Verma&background=1877F2&color=fff" alt="Aman">
+    </div>
+
+    <div class="conversation-info">
+
+        <div class="conversation-top">
+
+            <h4>Aman Verma</h4>
+
+            <span>Yesterday</span>
+
+        </div>
+
+        <div class="conversation-bottom">
+
+            <p>Meeting at 7 PM today.</p>
+
+            <span class="badge unread">5</span>
+
+        </div>
+
+    </div>
+
+    <i class="fa-brands fa-facebook platform facebook"></i>
+
+</div>
+
+<!-- ===========================
+        CONVERSATION 04
+=========================== -->
+
+<div class="conversation" data-platform="twitter">
+
+    <div class="avatar">
+        <img src="https://ui-avatars.com/api/?name=Elon+Fan&background=111111&color=fff" alt="Elon">
+    </div>
+
+    <div class="conversation-info">
+
+        <div class="conversation-top">
+
+            <h4>Elon Fan</h4>
+
+            <span>Mon</span>
+
+        </div>
+
+        <div class="conversation-bottom">
+
+            <p>Can you share your AI tool?</p>
+
+        </div>
+
+    </div>
+
+    <i class="fa-brands fa-x-twitter platform twitter"></i>
+
+</div>
+
+<!-- ===========================
+        CONVERSATION 05
+=========================== -->
+
+<div class="conversation" data-platform="threads">
+
+    <div class="avatar online">
+        <img src="https://ui-avatars.com/api/?name=Creative+Studio&background=000000&color=fff" alt="Studio">
+    </div>
+
+    <div class="conversation-info">
+
+        <div class="conversation-top">
+
+            <h4>Creative Studio</h4>
+
+            <span>Sun</span>
+
+        </div>
+
+        <div class="conversation-bottom">
+
+            <p>Interested in your AI content platform.</p>
+
+        </div>
+
+    </div>
+
+    <i class="fa-brands fa-threads platform threads"></i>
+
+</div>
+
+        </div>
+
+    </aside>
+
+    <!-- ===========================
+            CHAT WINDOW
+    ============================ -->
+
+    <section class="chat-window">
+
+        <!-- Chat Header -->
+
+        <div class="chat-header">
+
+            <div class="chat-user">
+
+                <div class="avatar online">
+
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=0A66C2&color=fff"
+                         alt="Rahul">
+
+                </div>
+
+                <div class="user-details">
+
+                    <h3>Rahul Sharma</h3>
+
+                    <span>
+
+                        <i class="fa-solid fa-circle"></i>
+
+                        Online • LinkedIn
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="chat-actions">
+
+                <button title="Voice Call">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </button>
+
+                <button title="Video Call">
+
+                    <i class="fa-solid fa-video"></i>
+
+                </button>
+
+                <button title="Search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+                <button title="More">
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Messages -->
+
+        <div class="chat-messages"
+             id="chatMessages">
+
+            <!-- Date -->
+
+            <div class="message-date">
+
+                Today
+
+            </div>
+
+            <!-- Incoming -->
+
+            <div class="message incoming">
+
+                <div class="message-avatar">
+
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=0A66C2&color=fff"
+                         alt="Rahul">
+
+                </div>
+
+                <div class="message-content">
+
+                    <p>
+
+                        Hi Ahmad 👋
+
+                        I saw your AI TITANS SOCIAL project on GitHub.
+
+                    </p>
+
+                    <span>
+
+                        10:20 AM
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Outgoing -->
+
+            <div class="message outgoing">
+
+                <div class="message-content">
+
+                    <p>
+
+                        Thank you 😊
+
+                        I'm currently building an AI powered Social Media Dashboard.
+
+                    </p>
+
+                    <span>
+
+                        10:23 AM
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Incoming -->
+
+            <div class="message incoming">
+
+                <div class="message-avatar">
+
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=0A66C2&color=fff"
+                         alt="Rahul">
+
+                </div>
+
+                <div class="message-content">
+
+                    <p>
+
+                        Looks impressive.
+
+                        Can it generate LinkedIn, Instagram and X posts?
+
+                    </p>
+
+                    <span>
+
+                        10:25 AM
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Outgoing -->
+
+            <div class="message outgoing">
+
+                <div class="message-content">
+
+                    <p>
+
+                        Yes 🚀
+
+                        AI Content Generator, Scheduler, Analytics and Inbox
+                        are all included.
+
+                    </p>
+
+                    <span>
+
+                        10:27 AM
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Incoming -->
+
+            <div class="message incoming">
+
+                <div class="message-avatar">
+
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=0A66C2&color=fff"
+                         alt="Rahul">
+
+                </div>
+
+                <div class="message-content">
+
+                    <p>
+
+                        Amazing.
+
+                        I would love to try the beta version.
+
+                    </p>
+
+                    <span>
+
+                        10:29 AM
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Typing Indicator -->
+
+            <div class="typing-indicator">
+
+                <div class="typing-avatar">
+
+                    <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=0A66C2&color=fff"
+                         alt="Rahul">
+
+                </div>
+
+                <div class="typing-box">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+                <!-- ===========================
+                MESSAGE INPUT
+        ============================ -->
+<!-- Emoji Picker -->
+
+<div id="emojiPicker" class="emoji-picker">
+
+    <div class="emoji-header">
+
+        <input
+            id="emojiSearch"
+            type="text"
+            placeholder="Search Emoji...">
+
+    </div>
+
+    <div class="emoji-tabs">
+
+        <button class="emoji-tab active"
+                data-category="smileys">😀</button>
+
+        <button class="emoji-tab"
+                data-category="hearts">❤️</button>
+
+        <button class="emoji-tab"
+                data-category="gestures">👍</button>
+
+        <button class="emoji-tab"
+                data-category="tech">🚀</button>
+
+    </div>
+
+    <div
+        id="emojiGrid"
+        class="emoji-grid">
+
+    </div>
+
+</div>
+        <div class="chat-input-area">
+
+            <button class="input-action"
+                    title="Emoji">
+
+                <i class="fa-regular fa-face-smile"></i>
+
+            </button>
+
+            <button class="input-action"
+                    title="Attach File">
+
+                <i class="fa-solid fa-paperclip"></i>
+
+            </button>
+
+            <button class="input-action"
+                    title="Upload Image">
+
+                <i class="fa-regular fa-image"></i>
+
+            </button>
+
+            <button class="input-action"
+                    title="Voice Message">
+
+                <i class="fa-solid fa-microphone"></i>
+
+            </button>
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type your message...">
+
+            <button
+                id="aiReplyBtn"
+                class="ai-reply-btn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                AI Reply
+
+            </button>
+
+            <button
+                id="sendBtn"
+                class="send-btn">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+</section>
+
+</main>
+
+</div>
+
+<!-- JavaScript -->
+
+<script type="module" src="js/inbox.js"></script>
+
+</body>
+
+</html>
