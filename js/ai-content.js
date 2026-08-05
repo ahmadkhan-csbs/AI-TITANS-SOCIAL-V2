@@ -20,6 +20,47 @@ const logoutBtn = document.getElementById("logoutBtn");
 
 const draftKey = "aiTitansSocialDraft";
 
+function buildFallbackPost(topicValue) {
+    const platformValue = platform.value;
+    const toneValue = tone.value.toLowerCase();
+    const lengthValue = length.value.toLowerCase();
+    const emojiText = emoji.checked ? " 🚀" : "";
+    const hashtagText = hashtags.checked
+        ? `\n\n#${topicValue.replace(/[^a-z0-9]+/gi, "").slice(0, 28) || "AITitans"} #SocialMedia #AI`
+        : "";
+
+    const openers = {
+        professional: `Here is a practical update on ${topicValue}.`,
+        friendly: `Let's talk about ${topicValue}.`,
+        motivational: `${topicValue} is a reminder that progress compounds when you stay consistent.`,
+        funny: `${topicValue} sounds simple until your content calendar asks for five versions by lunch.`,
+        educational: `Quick breakdown: ${topicValue} can become stronger content when it is clear, useful, and audience-first.`
+    };
+
+    const platformAdvice = {
+        LinkedIn: "Focus on the problem, share a clear insight, and end with a thoughtful question.",
+        Instagram: "Keep the hook visual, make the caption skimmable, and invite people to save or share it.",
+        Facebook: "Use a conversational angle and make the next action easy for your audience.",
+        X: "Lead with the sharpest idea, keep every word useful, and make it repost-worthy.",
+        Threads: "Write it like a real conversation and keep the momentum easy to reply to."
+    };
+
+    const body = [
+        openers[toneValue] || openers.professional,
+        platformAdvice[platformValue] || platformAdvice.LinkedIn
+    ];
+
+    if (lengthValue !== "short") {
+        body.push("The best posts do not just describe a feature. They show why it matters, how it helps, and what someone can do next.");
+    }
+
+    if (lengthValue === "long") {
+        body.push("Start with one specific pain point, add a concrete example, then close with a call to action that feels natural instead of forced.");
+    }
+
+    return `${body.join("\n\n")}${emojiText}${hashtagText}`;
+}
+
 onAuthStateChanged(auth, (user) => {
     if (!user) {
         window.location.href = "login.html";
@@ -58,14 +99,15 @@ Include hashtags: ${hashtags.checked ? "Yes" : "No"}`;
         const data = await response.json();
 
         if (!response.ok) {
-            output.value = data.error || "Unable to generate content. Please try again.";
+            console.warn("AI service returned an error:", data.error || data);
+            output.value = buildFallbackPost(topicValue);
             return;
         }
 
         output.value = data.result || "No content was generated. Please try again.";
     } catch (error) {
         console.error("Content generation failed:", error);
-        output.value = "Unable to reach the AI service. Please try again.";
+        output.value = buildFallbackPost(topicValue);
     } finally {
         generateBtn.disabled = false;
         generateBtn.textContent = "Generate Content";

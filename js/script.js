@@ -6,6 +6,7 @@
 // Navbar Background Change on Scroll
 
 const navbar = document.querySelector(".navbar");
+const ctaStart = document.getElementById("ctaStart");
 
 window.addEventListener("scroll", () => {
 
@@ -19,7 +20,6 @@ window.addEventListener("scroll", () => {
         navbar.style.background = "rgba(15,23,42,.85)";
         navbar.style.boxShadow = "none";
     }
-const ctaStart = document.getElementById("ctaStart");
 });
 
 
